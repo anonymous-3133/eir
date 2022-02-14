@@ -1,13 +1,13 @@
 import argparse
-import datetime
-import json
-import platform
+import torch.optim as optim
 from collections import OrderedDict
 
+from sklearn.metrics import roc_auc_score
 from tqdm import tqdm
 
-from eir import *
-
+from load_data import load_data
+from model.eir import EIR
+from utils import *
 
 def limitNumberSize(num):
     if num > 100000:
